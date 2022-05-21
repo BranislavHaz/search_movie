@@ -86,7 +86,7 @@ Detail ako fetchovat z externej API: [omdbapi.com](https://omdbapi.com/)
 
 # ODKAZ NA DEMO
 
-[ZOBRAZIŤ DEMO]([https://omdbapi.com/](https://search-movie-ow7mwe1cb-branislavhaz.vercel.app/))
+[ZOBRAZIŤ DEMO](https://search-movie-ow7mwe1cb-branislavhaz.vercel.app/)
 
 # SPUSTENIE
 
