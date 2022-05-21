@@ -19,7 +19,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     inputTextValue.length === 0 && setInputTextValue(searchQuery);
-  }, [searchQuery]);
+  }, [searchQuery, inputTextValue]);
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();

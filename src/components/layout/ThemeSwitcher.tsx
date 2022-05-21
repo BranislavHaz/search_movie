@@ -21,7 +21,7 @@ const ThemeSwitcher = () => {
       localStorage.setItem("theme", "light");
       document.body.classList.remove("dark-mode");
     }
-  });
+  }, [theme]);
 
   const handleClick = () => {
     setTheme(!theme);
@@ -41,6 +41,7 @@ const ThemeSwitcher = () => {
       src={theme ? lightMode : darkMode}
       onClick={handleClick}
       ref={changeThemeBtn}
+      alt="Theme switcher"
     />
   );
 };
