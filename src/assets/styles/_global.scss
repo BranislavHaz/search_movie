@@ -1,0 +1,71 @@
+@import "./abstracts/mixins.scss";
+@import "./abstracts/variables.scss";
+@import "./base/reset.scss";
+@import "./base/typography.scss";
+@import "./components/global/MoviesNotFound.scss";
+@import "./components/layout/themeSwitcher.scss";
+@import "./components/moviesDetail/backToHomepage.scss";
+@import "./components/moviesDetail/favoriteMovieButton.scss";
+@import "./components/moviesDetail/movieTable.scss";
+@import "./components/moviesList/movieRow";
+@import "./components/moviesList/moviesList.scss";
+@import "./components/moviesList/paginationBar.scss";
+@import "./components/moviesList/searchBar.scss";
+@import "./layout/header.scss";
+@import "./layout/main.scss";
+@import "./pages/detail.scss";
+@import "./pages/favorites.scss";
+@import "./pages/homepage.scss";
+@import "./pages/pageNotFound.scss";
+
+::selection {
+  background-color: $action-color;
+  color: $color-primary-dark;
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: $bg-primary-light;
+  color: $color-primary-light;
+
+  &.dark-mode {
+    background-color: $bg-primary-dark;
+    color: $color-primary-dark;
+
+    a {
+      color: $color-primary-dark;
+
+      &:hover {
+        color: $action-color;
+      }
+    }
+  }
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.btn {
+  background-color: $action-color;
+  border: none;
+  border-radius: 5px;
+  color: $color-primary-dark;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include blob-animation;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+input:focus {
+  outline: none;
+}

@@ -1,0 +1,39 @@
+.list-img-wrapper {
+  height: 100px;
+  margin-right: 3em;
+}
+
+.list-movies-row {
+  padding: 1.5em 0;
+  cursor: pointer;
+  transition: all 0.05s ease-in;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $color-secondary-light;
+    border-width: 0.01px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    color: $action-color;
+  }
+
+  td {
+    padding: 1em 0;
+  }
+
+  td:first-of-type {
+    width: 90px;
+  }
+
+  img {
+    width: 4em;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+.list-movie-year {
+  font-size: 0.9em;
+  font-style: italic;
+}

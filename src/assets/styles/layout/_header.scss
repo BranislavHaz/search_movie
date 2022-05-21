@@ -1,0 +1,52 @@
+header {
+  height: 6em;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-secondary-light;
+}
+
+.header-navigation {
+  width: 90vw;
+  max-width: 1150px;
+  height: 100%;
+  padding: 2em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    height: 6em;
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    height: 100%;
+  }
+
+  a {
+    height: 100%;
+    margin-right: 2em;
+    display: flex;
+    align-items: center;
+    font-weight: $font-bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-primary-light;
+    cursor: pointer;
+
+    &:hover {
+      color: $action-color;
+    }
+  }
+}
+
+.dark-mode header {
+  background-color: $bg-secondary-dark;
+}
+
+.active-page {
+  box-shadow: 0px 18px 0px -15px $action-color;
+}

@@ -1,0 +1,54 @@
+.pagination-bar {
+  margin-top: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    min-width: 40px;
+    min-height: 40px;
+    margin: 0.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid $color-secondary-light;
+    font-weight: $font-bold;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      background-color: $action-color;
+      color: $color-primary-dark;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    display: block;
+    font-size: 0.9em;
+  }
+}
+
+.rc-pagination-item-active {
+  background-color: $action-color;
+  color: $color-primary-dark;
+}
+
+.rc-pagination-prev,
+.rc-pagination-next {
+  padding: 0 0.5em;
+
+  @include md {
+    display: none !important;
+  }
+}
+
+.rc-pagination-options {
+  display: none !important;
+}
+
+.dark-mode .pagination-elements,
+.dark-mode .previous,
+.dark-mode .next {
+  border: 1px solid $color-secondary-dark;
+}

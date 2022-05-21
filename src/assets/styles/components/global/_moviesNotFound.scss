@@ -1,0 +1,19 @@
+.empty-img {
+  width: 10em;
+  margin-top: 6em;
+}
+
+.dark-mode .empty-img {
+  opacity: 0.2;
+}
+
+.empty-text {
+  margin-top: 2em;
+  font-size: 1.3em;
+  color: $color-secondary-light;
+  opacity: 0.25;
+}
+
+.dark-mode .empty-text {
+  color: $color-secondary-dark;
+}

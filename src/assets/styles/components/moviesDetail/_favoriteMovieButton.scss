@@ -1,0 +1,7 @@
+.favorited-button {
+  width: 2.5em;
+  height: 2.5em;
+  cursor: pointer;
+
+  @include blob-animation;
+}

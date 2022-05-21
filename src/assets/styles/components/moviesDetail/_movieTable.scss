@@ -1,0 +1,79 @@
+.detail-movie {
+  margin-bottom: 3em;
+}
+
+.movie-table {
+  width: 90vw;
+  max-width: 1150px;
+  margin: 4em 0;
+}
+
+.movie-title {
+  margin-bottom: 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-body {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    @include md {
+      width: 80vw;
+      margin-top: 2em;
+    }
+  }
+
+  tr:not(:last-of-type) {
+    border-bottom: 1px solid $color-secondary-light;
+    border-width: 0.01px;
+
+    @include md {
+      padding-right: 1em;
+    }
+  }
+
+  td {
+    @include md {
+      margin-right: 1em;
+      padding: 0.7em 1.5em 0.7em 0;
+    }
+  }
+}
+
+.movie-img {
+  width: 300px;
+  height: 470px;
+  margin-right: 5em;
+
+  @include lg {
+    margin-right: 2em;
+  }
+
+  @include md {
+    width: 80vw;
+    height: auto;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.movie-body {
+  display: flex;
+
+  @include lg {
+    justify-content: center;
+  }
+
+  @include md {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.movie-subtitle {
+  font-weight: $font-bold;
+  padding-right: 2em;
+}

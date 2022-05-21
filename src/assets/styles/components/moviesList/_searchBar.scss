@@ -1,0 +1,47 @@
+#find-movie-form {
+  width: 25em;
+  position: relative;
+}
+
+.find-movie-input {
+  width: 100%;
+  height: 4em;
+  padding: 0 8em 0 2em;
+  border-radius: 5px;
+  border: 0.1em solid $color-secondary-light;
+  font-weight: $font-bold;
+  background-color: transparent;
+  color: $color-primary-light;
+}
+
+.dark-mode .find-movie-input {
+  border: 0.1em solid $color-secondary-dark;
+  color: $color-primary-dark;
+}
+
+.find-movie-btn {
+  width: 7em;
+  height: 3em;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-weight: $font-bold;
+}
+
+.error-text {
+  text-align: center;
+  color: $error-color;
+}
+
+.wrong {
+  animation: wrong 0.1s 4 forwards;
+}
+
+@keyframes wrong {
+  25% {
+    transform: translateX(1em);
+  }
+  75% {
+    transform: translateX(-1em);
+  }
+}

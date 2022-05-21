@@ -1,46 +1,97 @@
-# Getting Started with Create React App
+# VYHĽADÁVAČ FILMOV
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Vyhľadávač filmov](https://i.ibb.co/PmLwjFt/vyhladavac.jpg "Vyhľadávač filmov")
 
-## Available Scripts
+# ZADANIE
 
-In the project directory, you can run:
+<details>
+  <summary>Zobraziť zadanie</summary>
+  <p>Vytvorte stranku na vyhladavanie filmov. Stranka bude pozostavat z hlavnej stranky, tzv HOMEPAGE, kde bude prehliadna tabulka filmov, ktore sa budu fetchovat z externej API, detail tychto filmov a zoznam Vasich oblubenych filmov.</p>
+  
+<p>Design stranky spravte priblizne rovnaky ako je na obrazkoch</p>
+  
+#### Aplikacia teda bude obsahovat 3x route
+- '/' pre homepage
+- '/movie/:id' pre detail
+- '/my-favorites'
+  
+#### Aplikacia bude obsahovat NAVIGATION:
+- HOMEPAGE
+- MY FAVORITES
 
-### `npm start`
+## HOMEPAGE
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Homepage bude obsahovat 2 sekcie:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Input search
+- tabulka
 
-### `npm test`
+#### V tabulke zobrazte zakladne udaje, ako je:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Obrazok
+- Nazov filmu
+- Rok vydania
+- Zaner
+- Hodnotenie
+- Oblubeny
 
-### `npm run build`
+<p>Nad tabulkou sa bude nachadzat input, ktorym sa budeme dotazovat na externe API. Cely proces bude fungovat cez REDUX a ako side-effect kniznicu pouzite REDUX-SAGA. Vsetok fetchnuty obsah ukladajte do REDUX store, ktory nasledne budete renderovat v tabulke.</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>Ak ziskate viac dat, idealne pouzit pagination (limit 10 filmov na stranku)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p>Pri kliknuti na dany film prejdem na jeho detail</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## MOVIE DETAIL
 
-### `npm run eject`
+<p>Tu budu rozne informacie vypisane. Je na Vas, kolko zobrazite. Idealne je mat aj obrazok
+daneho filmu</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p>V hornom rohu detailu filmu sa bude nachadzat tlacidlo pre pridanie do OBLUBENYCH, ktore
+sa budu ukladat do localStoragu. To znamena, ze ak dojde k refresh stranky, tak sa data o
+oblubenych filmov nacitaju z localStoragu a uzivatel uvidi, ci ma alebo nema rad dany film.
+(Vyhodnotenie tohto udaju necham na Vas, moze to byt text MAM RAD | NEMAM RAD
+alebo ikonka)</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## MY FAVORITES
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Tu bude jednoducha tabulka, ktora bude zobrazovat udaje ako:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Obr filmu
+- Nazov
+- Oblubeny
 
-## Learn More
+<p>Po kliknuti na dany film prejdem na jeho detail</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## VYPRACOVANIE
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p>Na vypracovanie idealne nepouzivajte ziadnu UI kniznicu (ako je Material-UI, Antd, Bulma
+atd). Taktiez idealne nepouzivajte ziadne framewory ako NEXTJS, GATSBY a pod. Aplikaciu je
+idealne napisat bud “from scratch” alebo pouzite CRA.</p>
+
+<p>Samozrejmost je pouzitie best practices.</p>
+
+## TECHNICKE UDAJE
+
+Technologie: React, Redux, Saga, Typescript
+Detail ako fetchovat z externej API: [omdbapi.com](https://omdbapi.com/)
+
+#### Bonus:
+
+- Ziadna UI kniznica
+- Ziaden framework
+- Pouzitie SASS
+- Cypress - testy
+- SSR – vlastnorucne napisany
+</details>
+
+# ODKAZ NA DEMO
+
+[ZOBRAZIŤ DEMO](https://omdbapi.com/)
+
+# SPUSTENIE
+
+<p>Pre nainštalovanie všetkých použitých balíčkov je potrebné v koreňovom adresári spustiť príkaz <code>npm install</code>.</p>
+
+<p>Následne pre zobrazenie v prehliadači zadajte príkaz <code>npm start</code>.</p>
+
+<p><em>Author: Branislav Ház</em></p>
