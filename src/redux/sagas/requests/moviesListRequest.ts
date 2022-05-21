@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GetMoviesList } from "../../types/moviesListTypes";
 
-const apiUrl = "http://www.omdbapi.com/";
+const apiUrl = "https://www.omdbapi.com/";
 
 export function getMovies(payload: GetMoviesList) {
   return axios.request({
