@@ -4,4 +4,8 @@
   margin-top: 5em;
   border-collapse: collapse;
   border-spacing: 0;
+
+  @include md {
+    margin-top: 3em;
+  }
 }

@@ -1,6 +1,10 @@
 #find-movie-form {
   width: 25em;
   position: relative;
+
+  @include md {
+    width: 80vw;
+  }
 }
 
 .find-movie-input {

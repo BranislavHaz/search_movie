@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovieDetail } from "../redux/slices/movieDetailSlice";
-import { MovieDetailState } from "../redux/types/movieDetailTypes";
+import {
+  getMovieDetail,
+  setMovieDetail,
+} from "../redux/slices/movieDetailSlice";
+import { MovieDetailState, MovieDetail } from "../redux/types/movieDetailTypes";
 
 import BackToHomepage from "../components/movieDetail/BackToHomepage";
 import MovieTable from "../components/movieDetail/MovieTable";
@@ -16,6 +19,7 @@ const Detail = () => {
   );
 
   useEffect(() => {
+    dispatch(setMovieDetail({} as MovieDetail));
     id && dispatch(getMovieDetail({ movieId: id }));
   }, [dispatch, id]);
 

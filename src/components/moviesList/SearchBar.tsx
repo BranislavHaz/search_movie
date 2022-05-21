@@ -65,7 +65,7 @@ const SearchBar = () => {
     <form id="find-movie-form" onSubmit={handleSubmit} ref={findForm}>
       <input
         className="find-movie-input"
-        type="text"
+        type="search"
         onChange={handleChange}
         ref={inputText}
         value={inputTextValue}
