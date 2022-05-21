@@ -1,4 +1,4 @@
-/* @import "./abstracts/mixins.scss";
+@import "./abstracts/mixins.scss";
 @import "./abstracts/variables.scss";
 @import "./base/reset.scss";
 @import "./base/typography.scss";
@@ -16,10 +16,7 @@
 @import "./pages/detail.scss";
 @import "./pages/favorites.scss";
 @import "./pages/homepage.scss";
-@import "./pages/pageNotFound.scss"; */
-@import "./abstracts/_mixins.scss";
-@import "./abstracts/_variables.scss";
-@import "./components/moviesList/_paginationBar.scss";
+@import "./pages/pageNotFound.scss";
 
 ::selection {
   background-color: $action-color;
