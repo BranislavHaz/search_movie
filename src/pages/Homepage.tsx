@@ -21,7 +21,7 @@ const Homepage = () => {
 
   const checkIsAvailable = () => {
     if (moviesList) {
-      if (searchQuery?.length === 0) {
+      if (searchQuery.length === 0) {
         return <MoviesNotFound type="find-movie" />;
       }
       return (
@@ -31,6 +31,7 @@ const Homepage = () => {
         </>
       );
     } else {
+      dispatch(setIsLoading(false));
       return <MoviesNotFound type="movies-list" />;
     }
   };
