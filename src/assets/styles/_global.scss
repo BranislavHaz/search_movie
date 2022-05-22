@@ -46,14 +46,6 @@ body {
   &.dark-mode {
     background-color: $bg-primary-dark;
     color: $color-primary-dark;
-
-    a {
-      color: $color-primary-dark;
-
-      &:hover {
-        color: $action-color;
-      }
-    }
   }
 }
 

@@ -7,6 +7,15 @@
   }
 }
 
+// Hover link color
+@mixin hover-action($color) {
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color;
+  }
+}
+
 // Breakpoints
 @mixin lg {
   @media (max-width: #{$screen-lg-max}) {
