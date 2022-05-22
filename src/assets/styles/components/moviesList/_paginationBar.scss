@@ -31,7 +31,9 @@
 
 .rc-pagination-item-active {
   background-color: $action-color;
-  color: $color-primary-dark;
+  a {
+    color: $color-primary-dark;
+  }
 }
 
 .rc-pagination-prev,

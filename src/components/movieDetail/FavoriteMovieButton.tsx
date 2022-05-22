@@ -33,7 +33,7 @@ const FavoriteMovieButton = () => {
   }, [isFavorited, movieDetail]);
 
   const handleClick = () => {
-    // Check if the movie is popular, if not add it
+    // Check if the movie is popular, if not - add it
     if (isFavorited) {
       const filterMovie = favoritedList.filter(
         (movie: MovieFavorite) => movie.imdbID !== movieDetail.imdbID

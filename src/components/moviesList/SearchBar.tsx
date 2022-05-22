@@ -2,7 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getMoviesList,
+  setMoviesList,
+  setTotalResults,
   setSearchQuery,
+  setIsLoading,
 } from "../../redux/slices/moviesListSlice";
 import { MoviesListState } from "../../redux/types/moviesListTypes";
 
@@ -18,12 +21,18 @@ const SearchBar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    inputTextValue.length === 0 && setInputTextValue(searchQuery);
-  }, [searchQuery, inputTextValue]);
+    setInputTextValue(searchQuery);
+  }, [searchQuery]);
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     inputText.current?.focus();
+
+    // Remove old movies list
+    dispatch(setTotalResults(0));
+
+    // Set loading state
+    dispatch(setIsLoading(true));
 
     // Simple input validation
     if (inputText.current?.value && inputText.current?.value.length > 2) {
@@ -57,18 +66,21 @@ const SearchBar = () => {
     );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputTextValue(e.target.value);
   };
+
+  const handleFocus = () => setInputTextValue("");
 
   return (
     <form id="find-movie-form" onSubmit={handleSubmit} ref={findForm}>
       <input
         className="find-movie-input"
-        type="search"
-        onChange={handleChange}
+        type="text"
+        onChange={handlChange}
+        onFocus={handleFocus}
         ref={inputText}
-        value={inputTextValue}
+        placeholder={inputTextValue}
       />
       {showErrorMessage()}
       <button

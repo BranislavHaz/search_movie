@@ -12,9 +12,11 @@ const MoviesList = ({ movies }: MoviesListProps) => {
     ));
 
   return (
-    <table className="list-movies-table">
-      <tbody>{movieList}</tbody>
-    </table>
+    <>
+      <table className="list-movies-table">
+        <tbody>{movieList}</tbody>
+      </table>
+    </>
   );
 };
 

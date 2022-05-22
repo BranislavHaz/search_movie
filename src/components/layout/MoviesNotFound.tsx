@@ -1,6 +1,7 @@
 import emptyMovie from "../../assets/images/empty-movie.png";
 import notFound from "../../assets/images/movie-not-found.png";
 import movieReel from "../../assets/images/movie-reel.png";
+import emptyFavorite from "../../assets/images/favorite-movies.png";
 
 const MoviesNotFound = ({ type }: { type: string }) => {
   const getText = () => {
@@ -30,6 +31,16 @@ const MoviesNotFound = ({ type }: { type: string }) => {
           <>
             <img className="empty-img" src={movieReel} alt="Empty" />
             <div className="empty-text">What movie should I find you?</div>
+          </>
+        );
+
+      case "favorite-movies":
+        return (
+          <>
+            <img className="empty-img" src={emptyFavorite} alt="Empty" />
+            <div className="empty-text">
+              You have no favorite movies! It's time to fix it.
+            </div>
           </>
         );
 

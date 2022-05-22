@@ -1,11 +1,9 @@
-import axios from "axios";
-import { GetMoviesList } from "../../types/moviesListTypes";
+import { GetMoviesListRequest } from "../../types/moviesListTypes";
 
 const apiUrl = "https://www.omdbapi.com/";
 
-export function getMovies(payload: GetMoviesList) {
-  return axios.request({
-    method: "get",
-    url: `${apiUrl}?apikey=${process.env.REACT_APP_API_KEY}&s=${payload.query}&page=${payload.page}`,
-  });
+export function getMovies(payload: GetMoviesListRequest) {
+  return fetch(
+    `${apiUrl}?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${payload.query}&page=${payload.page}`
+  ).then((resp) => resp.json());
 }

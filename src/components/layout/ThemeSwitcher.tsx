@@ -5,26 +5,26 @@ import darkMode from "../../assets/images/dark-mode.png";
 
 const ThemeSwitcher = () => {
   const changeThemeBtn = useRef<HTMLImageElement>(null);
-  const [theme, setTheme] = useState<Boolean | null>(null);
+  const [dark, setIsDark] = useState<Boolean | null>(null);
 
   useEffect(() => {
     const getTheme = localStorage.getItem("theme");
 
-    if (theme === null && getTheme === "dark") {
-      getTheme === "dark" ? setTheme(true) : setTheme(false);
+    if (dark === null && getTheme === "dark") {
+      getTheme === "dark" ? setIsDark(true) : setIsDark(false);
     }
 
-    if (theme) {
+    if (dark) {
       localStorage.setItem("theme", "dark");
       document.body.classList.add("dark-mode");
     } else {
       localStorage.setItem("theme", "light");
       document.body.classList.remove("dark-mode");
     }
-  }, [theme]);
+  }, [dark]);
 
   const handleClick = () => {
-    setTheme(!theme);
+    setIsDark(!dark);
 
     // Animate change theme button
     if (changeThemeBtn !== null) {
@@ -38,7 +38,7 @@ const ThemeSwitcher = () => {
   return (
     <img
       className="change-theme-btn"
-      src={theme ? lightMode : darkMode}
+      src={dark ? lightMode : darkMode}
       onClick={handleClick}
       ref={changeThemeBtn}
       alt="Theme switcher"

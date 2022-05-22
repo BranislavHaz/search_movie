@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux";
 import { MovieDetailState } from "../../redux/types/movieDetailTypes";
+
 import FavoriteMovieButton from "./FavoriteMovieButton";
+
+import imgNotFound from "../../assets/images/image-not-found.png";
 
 const MovieTable = () => {
   const { movieDetail } = useSelector(
@@ -39,7 +42,14 @@ const MovieTable = () => {
           </div>
           <div className="movie-body">
             <div className="movie-img">
-              <img src={movieDetail.Poster} alt={movieDetail.Title} />
+              <img
+                src={
+                  movieDetail.Poster === "N/A"
+                    ? imgNotFound
+                    : movieDetail.Poster
+                }
+                alt={movieDetail.Title}
+              />
             </div>
             <table>
               <tbody>{movieRows}</tbody>

@@ -2,7 +2,8 @@
 @import "./abstracts/variables.scss";
 @import "./base/reset.scss";
 @import "./base/typography.scss";
-@import "./components/global/moviesNotFound.scss";
+@import "./components/layout/loadingSpinner";
+@import "./components/layout/moviesNotFound.scss";
 @import "./components/layout/themeSwitcher.scss";
 @import "./components/moviesDetail/backToHomepage.scss";
 @import "./components/moviesDetail/favoriteMovieButton.scss";
@@ -21,6 +22,10 @@
 ::selection {
   background-color: $action-color;
   color: $color-primary-dark;
+}
+
+::placeholder {
+  opacity: 0.6;
 }
 
 body {

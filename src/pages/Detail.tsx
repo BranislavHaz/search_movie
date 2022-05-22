@@ -9,7 +9,8 @@ import { MovieDetailState, MovieDetail } from "../redux/types/movieDetailTypes";
 
 import BackToHomepage from "../components/movieDetail/BackToHomepage";
 import MovieTable from "../components/movieDetail/MovieTable";
-import MoviesNotFound from "../components/global/MoviesNotFound";
+import MoviesNotFound from "../components/layout/MoviesNotFound";
+import LoadingSpinner from "../components/layout/LoadingSpinner";
 
 const Detail = () => {
   const { id } = useParams();
@@ -29,11 +30,27 @@ const Detail = () => {
     );
   };
 
+  const showLoadSpinner = () => {
+    if (Object.keys(movieDetail).length === 0) {
+      return <LoadingSpinner />;
+    } else {
+      return (
+        <>
+          <MovieTable />
+          <BackToHomepage />
+        </>
+      );
+    }
+  };
+
   return (
     <div className="detail-movie">
-      {checkAvailability()}
-      <MovieTable />
-      <BackToHomepage />
+      {
+        <>
+          {checkAvailability()}
+          {showLoadSpinner()}
+        </>
+      }
     </div>
   );
 };

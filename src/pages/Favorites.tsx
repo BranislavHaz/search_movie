@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { MovieFavorite } from "../redux/types/movieDetailTypes";
+import MoviesNotFound from "../components/layout/MoviesNotFound";
 
 import MoviesList from "../components/moviesList/MoviesList";
 
@@ -16,6 +17,7 @@ const Favorites = () => {
   return (
     <div className="favorites">
       <h1>Favorite movies</h1>
+      {favoritedList?.length === 0 && <MoviesNotFound type="favorite-movies" />}
       <MoviesList movies={favoritedList} />
     </div>
   );

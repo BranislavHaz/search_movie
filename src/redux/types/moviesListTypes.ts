@@ -3,6 +3,7 @@ export type MoviesListState = {
     moviesList: MoviesListElement[];
     totalResults: number;
     searchQuery: string;
+    isLoading: boolean | null;
   };
 };
 
@@ -10,6 +11,7 @@ export type MoviesListInitial = {
   moviesList: MoviesListElement[];
   totalResults: number;
   searchQuery: string;
+  isLoading: boolean | null;
 };
 
 export type MoviesListProps = {
@@ -29,13 +31,12 @@ export type MoviesListElement = {
   Poster: string;
 };
 
-export type GetMoviesList = {
+export type GetMoviesListRequest = {
   query: string;
   page: number;
 };
 
-///
 export type FetchMoviesList = {
-  payload: { query: string; page: number };
+  payload: GetMoviesListRequest;
   type: string;
 };

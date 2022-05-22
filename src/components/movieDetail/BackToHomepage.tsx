@@ -9,7 +9,7 @@ const BackToHomepage = () => {
 
   return (
     <button className="btn back-home-btn" onClick={handleClick}>
-      Back to homepage
+      Go to homepage
     </button>
   );
 };
