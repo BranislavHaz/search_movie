@@ -39,6 +39,12 @@
   background-color: $action-color;
   a {
     color: $color-primary-dark;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-primary-dark;
+    }
   }
 }
 
