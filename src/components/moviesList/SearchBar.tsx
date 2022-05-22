@@ -24,7 +24,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    inputText.current?.focus();
+    inputText.current?.blur();
 
     // Remove old movies list
     dispatch(setTotalResults(0));
