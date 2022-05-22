@@ -26,6 +26,12 @@
   a {
     display: block;
     font-size: 0.9em;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-primary-dark;
+    }
   }
 }
 

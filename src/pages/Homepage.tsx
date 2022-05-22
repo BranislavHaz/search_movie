@@ -17,7 +17,7 @@ const Homepage = () => {
 
   useEffect(() => {
     moviesList && dispatch(setIsLoading(false));
-  }, [moviesList]);
+  }, [moviesList, dispatch]);
 
   const checkIsAvailable = () => {
     if (moviesList) {
