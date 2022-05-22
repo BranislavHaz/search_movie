@@ -4,7 +4,6 @@ import {
   getMoviesList,
   setTotalResults,
   setSearchQuery,
-  setIsLoading,
 } from "../../redux/slices/moviesListSlice";
 import { MoviesListState } from "../../redux/types/moviesListTypes";
 
@@ -29,9 +28,6 @@ const SearchBar = () => {
 
     // Remove old movies list
     dispatch(setTotalResults(0));
-
-    // Set loading state
-    dispatch(setIsLoading(true));
 
     // Simple input validation
     if (inputText.current?.value && inputText.current?.value.length > 2) {

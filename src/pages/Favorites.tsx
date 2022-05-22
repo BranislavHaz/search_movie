@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { MovieFavorite } from "../redux/types/movieDetailTypes";
 import MoviesNotFound from "../components/layout/MoviesNotFound";
-
 import MoviesList from "../components/moviesList/MoviesList";
 
 const Favorites = () => {

@@ -9,7 +9,6 @@ const initialState = {
   moviesList: [{}],
   totalResults: 0,
   searchQuery: "",
-  isLoading: null,
 } as MoviesListInitial;
 
 export const moviesListSlice = createSlice({
@@ -26,18 +25,10 @@ export const moviesListSlice = createSlice({
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
     },
-    setIsLoading: (state, action: PayloadAction<boolean>) => {
-      state.isLoading = action.payload;
-    },
   },
 });
 
-export const {
-  getMoviesList,
-  setMoviesList,
-  setTotalResults,
-  setSearchQuery,
-  setIsLoading,
-} = moviesListSlice.actions;
+export const { getMoviesList, setMoviesList, setTotalResults, setSearchQuery } =
+  moviesListSlice.actions;
 
 export default moviesListSlice.reducer;

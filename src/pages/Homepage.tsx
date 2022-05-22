@@ -1,23 +1,15 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setIsLoading } from "../redux/slices/moviesListSlice";
+import { useSelector } from "react-redux";
 import { MoviesListState } from "../redux/types/moviesListTypes";
 
 import SearchBar from "../components/moviesList/SearchBar";
 import MoviesList from "../components/moviesList/MoviesList";
 import PaginationBar from "../components/moviesList/PaginationBar";
 import MoviesNotFound from "../components/layout/MoviesNotFound";
-import LoadingSpinner from "../components/layout/LoadingSpinner";
-import { useEffect } from "react";
 
 const Homepage = () => {
-  const { moviesList, searchQuery, isLoading } = useSelector(
+  const { moviesList, searchQuery } = useSelector(
     (state: MoviesListState) => state.moviesList
   );
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    moviesList && dispatch(setIsLoading(false));
-  }, [moviesList, dispatch]);
 
   const checkIsAvailable = () => {
     if (moviesList) {
@@ -31,7 +23,6 @@ const Homepage = () => {
         </>
       );
     } else {
-      dispatch(setIsLoading(false));
       return <MoviesNotFound type="movies-list" />;
     }
   };
@@ -40,7 +31,6 @@ const Homepage = () => {
     <div className="homepage">
       <>
         <SearchBar />
-        {isLoading && <LoadingSpinner />}
         {checkIsAvailable()}
       </>
     </div>
