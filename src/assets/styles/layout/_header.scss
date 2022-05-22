@@ -40,6 +40,10 @@ header {
   }
 }
 
+.change-theme-btn:hover {
+  opacity: 0.8;
+}
+
 .dark-mode header {
   background-color: $bg-secondary-dark;
 }
