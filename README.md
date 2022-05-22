@@ -86,7 +86,7 @@ Detail ako fetchovat z externej API: [omdbapi.com](https://omdbapi.com/)
 
 # ODKAZ NA DEMO
 
-[ZOBRAZIŤ DEMO] (https://search-movie-theta.vercel.app/)
+[ZOBRAZIŤ DEMO](https://search-movie-theta.vercel.app/)
 
 # SPUSTENIE
 
